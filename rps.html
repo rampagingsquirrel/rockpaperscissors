@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    // Javascript goes here
+
+    Game()
+
+    function Game() {
+        // Game Loop
+        let computerScore = 0
+        let playerScore = 0
+
+        for (let round = 0; round < 5; round++){
+
+            // Call game round function
+            let roundWinner = GameRound()
+            
+            // increment scores based on round winner
+            switch (roundWinner) {
+
+                case "player":
+                    playerScore++;
+                    break;
+                case "computer":
+                    computerScore++;
+            }
+
+        }
+
+        // after five rounds, determine winner & announce
+        
+    }
+
+    function GameRound() {
+
+        //initialize variables
+        let winner = 0
+        let playerChoice = 0
+        let computerChoice = 0
+
+        // get user's choice
+
+        while (validChoice = false){
+
+            playerChoice = PromptPlayer()
+
+            // check to make sure the player has entered a valid choice
+            // (only rock, paper or scissors)
+
+            if (playerChoice == "rock") {
+
+                console.log ("You have chosen ROCK!")
+                validChoice = true
+
+            } else if (playerChoice == "paper"){
+
+                console.log("You have chosen PAPER!")
+                validChoice = true
+
+            } else if (playerChoice == "scissors"){
+
+                console.log("You have chosen SCISSORS!")
+                validChoice = true
+
+            } else {
+
+                console.log("You can only choose rock, paper or scissors. Try again.")
+            
+            }
+
+
+        }
+        
+        // now it's the computer's turn
+        computerChoice = ComputerTurn()
+
+        // determine winner
+        // return winner (must return either "player" or "computer")
+    }
+
+    function PromptPlayer(){
+        // Prompt user to choose rock/paper/scissors, then convert to lower case
+        let userInput = prompt("Rock, Paper or Scissors?")
+        userInput = userInput.toLowerCase()
+
+        // return value
+        return userInput
+    }
+
+    function ComputerTurn(){
+
+        // initialize variables
+        let randomNumber = 0
+        let choiceToReturn = 0
+
+        // the computer will randomly choose (0)rock, (1)paper or (2)scissors
+        // and then will return the value (rock, paper or scissors)
+
+        // pick a number between 0 and 2
+        randomNumber = Math.floor(Math.random() * Math.floor(3))
+
+        // 0 = paper, 1 = rock, 2 = scissors
+        switch (randomNumber){
+            
+            case 0:
+            choiceToReturn = "paper"
+            break
+
+            case 1:
+            choiceToReturn = "rock"
+            break
+
+            case 2:
+            choiceToReturn = "scissors"
+
+        }
+
+        // return the computer's choice
+        return choiceToReturn
+
+    }
+
+    function DetermineRoundWinner(playerChoice, computerChoice) {
+
+        // compare player choice and computer choice to determine winner
+        // return winner ("player" or "computer")
+
+        if (playerChoice == "paper"){
+
+            // placeholder
+
+        } else if (playerChoice == "rock"){
+
+            //  placeholder
+
+        } else if (playerChoice == "scissors") {
+
+            // placeholder
+
+        } else {
+
+            // this shouldn't happen. tell me where the fault occurred. 
+            console.log("Invalid input in function DetermineRoundWinner")
+            return 1
+        }
+    }
+
+  </script>
+</body>
+</html>
