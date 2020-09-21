@@ -60,11 +60,11 @@
         let winner = 0
         let playerChoice = 0
         let computerChoice = 0
+        let validChoice = false
 
         // get user's choice
-
-        while (validChoice = false){
-
+        while (validChoice == false){
+        
             playerChoice = PromptPlayer()
 
             // check to make sure the player has entered a valid choice
@@ -103,6 +103,7 @@
     }
 
     function PromptPlayer(){
+
         // Prompt user to choose rock/paper/scissors, then convert to lower case
         let userInput = prompt("Rock, Paper or Scissors?")
         userInput = userInput.toLowerCase()
