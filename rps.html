@@ -23,16 +23,34 @@
             switch (roundWinner) {
 
                 case "player":
+                    console.log("The PLAYER has won this round!")
                     playerScore++
                     break
 
                 case "computer":
+                    console.log("The COMPUTER has won this round!")
                     computerScore++
+                    break
+                case "tie":
+                    console.log("It's a TIE!")
             }
 
         }
 
         // after five rounds, determine winner & announce
+        if (computerScore > playerScore){
+
+            console.log("The COMPUTER has won the game!")
+
+        } else if (computerScore < playerScore){
+
+            console.log("The PLAYER has won the game!")
+
+        } else {
+
+            console.log("It's a DRAW! No one wins!")
+
+        }
         
     }
 
@@ -110,14 +128,17 @@
             
             case 0:
             choiceToReturn = "paper"
+            console.log("The computer has chosen PAPER!")
             break
 
             case 1:
             choiceToReturn = "rock"
+            console.log("The computer has chosen ROCK!")
             break
 
             case 2:
             choiceToReturn = "scissors"
+            console.log("The computer has chosen SCISSORS!")
 
         }
 
