@@ -6,7 +6,6 @@
 </head>
 <body>
   <script>
-    // Javascript goes here
 
     Game()
 
@@ -24,10 +23,11 @@
             switch (roundWinner) {
 
                 case "player":
-                    playerScore++;
-                    break;
+                    playerScore++
+                    break
+
                 case "computer":
-                    computerScore++;
+                    computerScore++
             }
 
         }
@@ -79,8 +79,9 @@
         // now it's the computer's turn
         computerChoice = ComputerTurn()
 
-        // determine winner
-        // return winner (must return either "player" or "computer")
+        // determine winner and return
+        return DetermineRoundWinner(playerChoice, computerChoice)
+    
     }
 
     function PromptPlayer(){
@@ -128,19 +129,63 @@
     function DetermineRoundWinner(playerChoice, computerChoice) {
 
         // compare player choice and computer choice to determine winner
-        // return winner ("player" or "computer")
+        // return winner ("player", "computer", or "tie")
+
+        let winnner = 0
 
         if (playerChoice == "paper"){
 
-            // placeholder
+            switch (computerChoice){
+
+                case "rock":
+                winner = "player"
+                break
+
+                case "paper":
+                winner = "tie"
+                break
+
+                case "scissors":
+                winner = "computer"
+            }
+
+            return winner
 
         } else if (playerChoice == "rock"){
 
-            //  placeholder
+            switch (computerChoice){
+
+                case "rock":
+                winner = "tie"
+                break
+
+                case "paper":
+                winner = "computer"
+                break
+
+                case "scissors":
+                winner = "player"
+            }
+
+            return winner
 
         } else if (playerChoice == "scissors") {
 
-            // placeholder
+            switch (computerChoice){
+
+                case "rock":
+                winner = "computer"
+                break
+
+                case "paper":
+                winner = "player"
+                break
+
+                case "scissors":
+                winner = "tie"
+            }
+
+            return winner
 
         } else {
 
