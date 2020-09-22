@@ -10,13 +10,15 @@
     Game()
 
     function Game() {
-        // Game Loop
+
+        // initialize variables
         let computerScore = 0
         let playerScore = 0
-
+        
+        // game loop
         for (let round = 0; round < 5; round++){
 
-            // Call game round function
+            // begin the game round
             let roundWinner = GameRound()
             
             // increment scores based on round winner
